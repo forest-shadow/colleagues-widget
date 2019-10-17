@@ -35,13 +35,16 @@ input::placeholder {
     display: flex;
     flex-direction: row;
 }
-.colleagues__save-btn {
+.colleagues__save-btn,
+.colleagues__clear-btn {
     background-color: darkorchid;
     color: #fff;
     height: 40px;
-    width: 100px;
+    min-width: 100px;
+    padding: 0 16px;
     font-size: 16px;
     border: none;
+    margin-right: 14px;
 }
 
 .colleagues__add-btn {
@@ -52,4 +55,11 @@ input::placeholder {
     height: 24px;
     width: 24px;
     border: 2px solid #fff;
+}
+
+.colleagues__delete-btn {
+    background: transparent;
+    border: 2px solid indianred;
+    color: indianred;
+    font-weight: bold;
 }
