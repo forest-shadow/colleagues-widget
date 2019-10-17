@@ -1,0 +1,55 @@
+body {
+    background-color: darkslateblue;
+    color: white;
+}
+
+h2 {
+    margin: 0 16px 20px 0;
+    display: inline-block;
+}
+
+input {
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    height: 26px;
+    padding: 5px 16px;
+    border: 2px solid #fff;
+    margin-right: 2%;
+}
+input::placeholder {
+    color: #fff;
+    opacity: 0.4;
+}
+
+.colleagues {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.colleagues__rows {
+    margin-bottom: 20px;
+}
+
+.colleagues__row {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: row;
+}
+.colleagues__save-btn {
+    background-color: darkorchid;
+    color: #fff;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    border: none;
+}
+
+.colleagues__add-btn {
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    height: 24px;
+    width: 24px;
+    border: 2px solid #fff;
+}
