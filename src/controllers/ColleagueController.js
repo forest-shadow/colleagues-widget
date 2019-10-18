@@ -16,19 +16,28 @@ class ColleagueController {
     EventEmitter.on('colleagues::save', formData => {
       console.log(this.colleaguesFromForm(formData, 3));
       ColleagueModel.saveColleagues(this.colleaguesFromForm(formData, 3));
+      EventEmitter.emit('counter::update')
     });
 
     EventEmitter.on('colleagues::delete', () => {
       console.log('colleagues::delete');
       ColleagueModel.deleteColleagues();
       deleteColleagues();
+      EventEmitter.emit('counter::update')
     });
 
-    EventEmitter.on('colleague::delete', (colleague) => {
+    EventEmitter.on('colleague::delete', colleague => {
       console.log('colleague::delete');
       ColleagueModel.saveColleagues(
-        ColleagueModel.getColleagues().filter(colleagueItem => !(colleagueItem.name === colleague.name && colleagueItem.surname === colleague.surname) )
+        ColleagueModel.getColleagues().filter(
+          colleagueItem =>
+            !(
+              colleagueItem.name === colleague.name &&
+              colleagueItem.surname === colleague.surname
+            )
+        )
       );
+      EventEmitter.emit('counter::update')
     });
   }
 

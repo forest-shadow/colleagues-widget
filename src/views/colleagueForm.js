@@ -34,9 +34,15 @@ colleaguesRowsEl.addEventListener('click', e => {
   e.preventDefault();
   const currentRow = e.target.parentNode;
   if (e.target.className === 'colleagues__delete-btn') {
-    const colleague = new Colleague(...getSiblings(e.target).map(sibling => sibling.value))
-    console.log(new Colleague(...getSiblings(e.target).map(sibling => sibling.value)))
-    EventEmitter.emit('colleague::delete', colleague)
+    const colleague = new Colleague(
+      ...getSiblings(e.target).map(sibling => sibling.value)
+    );
+    console.log(
+      new Colleague(...getSiblings(e.target).map(sibling => sibling.value))
+    );
+    colleague.name &&
+      colleague.surname &&
+      EventEmitter.emit('colleague::delete', colleague);
     currentRow.parentNode.removeChild(currentRow);
   }
   console.log(e.target.className, currentRow);
